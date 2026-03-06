@@ -4,35 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sibabalwe Nqwaba | BCom Product Engineer</title>
-    <meta name="description" content="Portfolio of Sibabalwe Nqwaba, a BCom Product Engineer and Full-Stack Developer bridging business operations with digital ecosystems.">
+    <meta name="description" content="Portfolio of Sibabalwe Nqwaba, a BCom Product Engineer and Full-Stack Developer.">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root {
-            --accent-brown: #8a735b;
-        }
-        .focus-outline {
-            outline: 2px solid var(--accent-brown);
-            outline-offset: 4px;
-        }
+        :root { --accent-brown: #8a735b; }
+        .focus-outline { outline: 2px solid var(--accent-brown); outline-offset: 4px; }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #0a0a0a; }
         ::-webkit-scrollbar-thumb { background: #262626; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #404040; }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
     </style>
 </head>
-<body class="bg-[#0a0a0a] text-neutral-300 font-sans antialiased selection:bg-[#8a735b] selection:text-white">
+<body class="bg-[#0a0a0a] text-neutral-300 font-sans antialiased selection:bg-[#8a735b] selection:text-white relative">
 
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-[#8a735b] text-white px-4 py-2 rounded-md z-50">
         Skip to main content
     </a>
 
-    <nav class="max-w-6xl mx-auto px-6 py-8 flex justify-between items-center border-b border-neutral-900">
-        <span class="text-white font-semibold tracking-widest text-sm uppercase">S. Nqwaba</span>
-        <a href="#contact" class="text-sm text-neutral-400 hover:text-white transition-colors focus:focus-outline rounded-sm">Contact</a>
+    <nav class="fixed w-full top-0 z-40 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-neutral-900 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="#" class="text-white font-semibold tracking-widest text-sm uppercase focus:focus-outline rounded-sm hover:text-[#8a735b] transition-colors">S. Nqwaba</a>
+            <div class="flex gap-6">
+                <a href="#projects" class="text-sm text-neutral-400 hover:text-white transition-colors focus:focus-outline rounded-sm hidden sm:block">Architecture</a>
+                <a href="#contact" class="text-sm text-neutral-400 hover:text-white transition-colors focus:focus-outline rounded-sm">Contact</a>
+            </div>
+        </div>
     </nav>
 
-    <main id="main-content">
-        <header class="py-32 px-6 max-w-6xl mx-auto flex flex-col justify-center">
+    <main id="main-content" class="pt-24">
+        
+        <header class="min-h-[85vh] px-6 max-w-6xl mx-auto flex flex-col justify-center reveal">
             <p class="text-[#8a735b] font-medium tracking-widest uppercase text-sm mb-6 flex items-center gap-4">
                 <span class="w-8 h-[1px] bg-[#8a735b]"></span>
                 Pretoria, South Africa
@@ -45,106 +59,107 @@
                 I am a BCom Product Engineer and Full-Stack Developer. I combine economic fundamentals with software architecture to focus on frugal innovation, resource allocation, and product-market fit.
             </p>
             <div class="flex flex-wrap gap-4">
-                <a href="#projects" class="px-8 py-4 bg-white hover:bg-neutral-200 text-black rounded-sm font-medium transition-colors focus:focus-outline">
+                <a href="#projects" class="px-8 py-4 bg-white hover:bg-neutral-200 text-black rounded-sm font-medium transition-colors focus:focus-outline shadow-lg shadow-white/5">
                     View Architecture
                 </a>
-                <a href="https://www.linkedin.com/in/sibabalwe-nqwaba-3270872a0/" target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn profile" class="px-8 py-4 bg-transparent border border-neutral-700 hover:border-neutral-400 text-white rounded-sm font-medium transition-colors focus:focus-outline">
+                <a href="https://www.linkedin.com/in/sibabalwe-nqwaba-3270872a0/" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-transparent border border-neutral-700 hover:border-neutral-400 text-white rounded-sm font-medium transition-colors focus:focus-outline">
                     LinkedIn
                 </a>
             </div>
         </header>
 
-        <section id="projects" class="py-24 px-6 bg-[#121212] border-t border-neutral-900">
+        <section id="projects" class="py-24 px-6 bg-[#121212] border-t border-neutral-900 scroll-mt-20">
             <div class="max-w-6xl mx-auto">
-                <div class="mb-16">
+                <div class="mb-16 reveal">
                     <h2 class="text-3xl font-bold text-white tracking-tight">Production Systems & Prototypes</h2>
-                    <p class="text-neutral-500 mt-2">Engineered for performance and scalability.</p>
+                    <p class="text-neutral-500 mt-2">Engineered for performance and scalability. (Click cards to view live deployments)</p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="group relative bg-[#0a0a0a] border border-neutral-800 p-8 hover:border-[#8a735b] transition-colors duration-300 rounded-sm flex flex-col h-full">
-                        <span class="text-neutral-600 font-mono text-sm mb-6 block">01 //</span>
-                        <h3 class="text-xl font-bold text-white mb-1">Invicta Laundry System</h3>
+                    
+                    <a href="https://invicta-laundry.netlify.app/" target="_blank" rel="noopener noreferrer" class="group relative bg-[#0a0a0a] border border-neutral-800 p-8 hover:border-[#8a735b] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#8a735b]/5 rounded-sm flex flex-col h-full reveal delay-100 focus:focus-outline">
+                        <span class="text-neutral-600 font-mono text-sm mb-6 block transition-colors group-hover:text-[#8a735b]">01 //</span>
+                        <h3 class="text-xl font-bold text-white mb-1 group-hover:underline decoration-[#8a735b] underline-offset-4">Invicta Laundry System</h3>
                         <p class="text-sm font-medium text-[#8a735b] mb-4">Real-Time Resource Ledger</p>
                         <p class="text-neutral-400 mb-8 text-sm leading-relaxed flex-grow">Designed a serverless booking ecosystem using Firebase NoSQL and Google OAuth to eliminate physical queueing bottlenecks and double-bookings at a university residence.</p>
                         <div class="flex flex-wrap gap-2 mt-auto">
-                            <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-300 rounded-sm text-xs font-mono">Firebase NoSQL</span>
+                            <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-300 rounded-sm text-xs font-mono">Firebase</span>
                             <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-300 rounded-sm text-xs font-mono">OAuth</span>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="group relative bg-[#0a0a0a] border border-neutral-800 p-8 hover:border-[#8a735b] transition-colors duration-300 rounded-sm flex flex-col h-full">
-                        <span class="text-neutral-600 font-mono text-sm mb-6 block">02 //</span>
-                        <h3 class="text-xl font-bold text-white mb-1">Automated QA Auditor</h3>
+                    <a href="https://github.com/SibaSnlv" target="_blank" rel="noopener noreferrer" class="group relative bg-[#0a0a0a] border border-neutral-800 p-8 hover:border-[#8a735b] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#8a735b]/5 rounded-sm flex flex-col h-full reveal delay-200 focus:focus-outline">
+                        <span class="text-neutral-600 font-mono text-sm mb-6 block transition-colors group-hover:text-[#8a735b]">02 //</span>
+                        <h3 class="text-xl font-bold text-white mb-1 group-hover:underline decoration-[#8a735b] underline-offset-4">Automated QA Auditor</h3>
                         <p class="text-sm font-medium text-[#8a735b] mb-4">Testing Infrastructure</p>
                         <p class="text-neutral-400 mb-8 text-sm leading-relaxed flex-grow">Engineered a headless Quality Control "Auditor" using Python and Selenium WebDriver to programmatically traverse the DOM, ensuring core business logic remains flawless.</p>
                         <div class="flex flex-wrap gap-2 mt-auto">
                             <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-300 rounded-sm text-xs font-mono">Python</span>
                             <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-300 rounded-sm text-xs font-mono">Selenium</span>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="group relative bg-[#0a0a0a] border border-neutral-800 p-8 hover:border-[#8a735b] transition-colors duration-300 rounded-sm flex flex-col h-full">
-                        <span class="text-neutral-600 font-mono text-sm mb-6 block">03 //</span>
-                        <h3 class="text-xl font-bold text-white mb-1">Lock-In-Chief</h3>
+                    <a href="https://lock-in-chief.vercel.app/" target="_blank" rel="noopener noreferrer" class="group relative bg-[#0a0a0a] border border-neutral-800 p-8 hover:border-[#8a735b] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#8a735b]/5 rounded-sm flex flex-col h-full reveal delay-300 focus:focus-outline">
+                        <span class="text-neutral-600 font-mono text-sm mb-6 block transition-colors group-hover:text-[#8a735b]">03 //</span>
+                        <h3 class="text-xl font-bold text-white mb-1 group-hover:underline decoration-[#8a735b] underline-offset-4">Lock-In-Chief</h3>
                         <p class="text-sm font-medium text-[#8a735b] mb-4">Localized State Management</p>
                         <p class="text-neutral-400 mb-8 text-sm leading-relaxed flex-grow">Built a gamified behavioral focus application utilizing client-side localStorage, acting as local petty-cash to deliver a zero-latency, offline-first user experience.</p>
                         <div class="flex flex-wrap gap-2 mt-auto">
                             <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-300 rounded-sm text-xs font-mono">JavaScript</span>
                             <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-300 rounded-sm text-xs font-mono">Web Storage</span>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="group relative bg-[#0a0a0a] border border-neutral-800 p-8 hover:border-[#8a735b] transition-colors duration-300 rounded-sm flex flex-col h-full">
-                        <span class="text-neutral-600 font-mono text-sm mb-6 block">04 //</span>
-                        <h3 class="text-xl font-bold text-white mb-1">Zeli Candy Bee</h3>
+                    <a href="https://the-bee-game.netlify.app/" target="_blank" rel="noopener noreferrer" class="group relative bg-[#0a0a0a] border border-neutral-800 p-8 hover:border-[#8a735b] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#8a735b]/5 rounded-sm flex flex-col h-full reveal delay-100 focus:focus-outline">
+                        <span class="text-neutral-600 font-mono text-sm mb-6 block transition-colors group-hover:text-[#8a735b]">04 //</span>
+                        <h3 class="text-xl font-bold text-white mb-1 group-hover:underline decoration-[#8a735b] underline-offset-4">Zeli Candy Bee</h3>
                         <p class="text-sm font-medium text-[#8a735b] mb-4">Continuous Operational Cycles</p>
                         <p class="text-neutral-400 mb-8 text-sm leading-relaxed flex-grow">Engineered a custom 2D rendering and physics engine from scratch using the HTML5 Canvas API to manage complex vector physics and collision detection at 60 fps.</p>
                         <div class="flex flex-wrap gap-2 mt-auto">
                             <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-300 rounded-sm text-xs font-mono">Canvas API</span>
-                            <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-300 rounded-sm text-xs font-mono">Game Engine</span>
+                            <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-300 rounded-sm text-xs font-mono">Engine</span>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="group relative bg-[#0a0a0a] border border-neutral-800 p-8 hover:border-[#8a735b] transition-colors duration-300 rounded-sm flex flex-col h-full">
-                        <span class="text-neutral-600 font-mono text-sm mb-6 block">05 //</span>
-                        <h3 class="text-xl font-bold text-white mb-1">3D WebGL Interface</h3>
+                    <a href="https://github.com/SibaSnlv" target="_blank" rel="noopener noreferrer" class="group relative bg-[#0a0a0a] border border-neutral-800 p-8 hover:border-[#8a735b] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#8a735b]/5 rounded-sm flex flex-col h-full reveal delay-200 focus:focus-outline">
+                        <span class="text-neutral-600 font-mono text-sm mb-6 block transition-colors group-hover:text-[#8a735b]">05 //</span>
+                        <h3 class="text-xl font-bold text-white mb-1 group-hover:underline decoration-[#8a735b] underline-offset-4">3D WebGL Interface</h3>
                         <p class="text-sm font-medium text-[#8a735b] mb-4">Spatial Computing</p>
                         <p class="text-neutral-400 mb-8 text-sm leading-relaxed flex-grow">Constructed an immersive 3D scene graph within the browser utilizing Three.js, configuring custom mesh geometries and a real-time lighting pipeline with dynamic shadow mapping.</p>
                         <div class="flex flex-wrap gap-2 mt-auto">
                             <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-300 rounded-sm text-xs font-mono">Three.js</span>
                             <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-300 rounded-sm text-xs font-mono">WebGL</span>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="group relative bg-[#0a0a0a] border border-neutral-800 p-8 hover:border-[#8a735b] transition-colors duration-300 rounded-sm flex flex-col h-full">
-                        <span class="text-neutral-600 font-mono text-sm mb-6 block">06 //</span>
-                        <h3 class="text-xl font-bold text-white mb-1">Connection Calendar</h3>
+                    <a href="https://github.com/SibaSnlv" target="_blank" rel="noopener noreferrer" class="group relative bg-[#0a0a0a] border border-neutral-800 p-8 hover:border-[#8a735b] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#8a735b]/5 rounded-sm flex flex-col h-full reveal delay-300 focus:focus-outline">
+                        <span class="text-neutral-600 font-mono text-sm mb-6 block transition-colors group-hover:text-[#8a735b]">06 //</span>
+                        <h3 class="text-xl font-bold text-white mb-1 group-hover:underline decoration-[#8a735b] underline-offset-4">Connection Calendar</h3>
                         <p class="text-sm font-medium text-[#8a735b] mb-4">Human-Centric Cloud Sync</p>
                         <p class="text-neutral-400 mb-8 text-sm leading-relaxed flex-grow">Designed a shared event-planning dashboard powered by Cloud Firestore. Utilized asynchronous JavaScript to ensure non-blocking UI rendering during cloud data mutations.</p>
                         <div class="flex flex-wrap gap-2 mt-auto">
                             <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-300 rounded-sm text-xs font-mono">Firestore</span>
                             <span class="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-300 rounded-sm text-xs font-mono">Async JS</span>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="py-24 px-6 bg-[#0a0a0a] border-t border-neutral-900">
+        <section id="contact" class="py-24 px-6 bg-[#0a0a0a] border-t border-neutral-900 scroll-mt-20 reveal">
             <div class="max-w-4xl mx-auto text-center">
                 <h2 class="text-3xl font-bold text-white tracking-tight mb-4">Get In Touch</h2>
                 <p class="text-neutral-500 mb-12">Currently exploring 2026 opportunities for hybrid tech roles and PGDip sponsorships.</p>
                 
                 <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
-                    <a href="mailto:sibtellnew14@gmail.com" class="group w-full md:w-auto flex flex-col items-center gap-2 p-8 border border-neutral-800 hover:border-[#8a735b] bg-[#121212] transition-colors rounded-sm min-w-[280px] focus:focus-outline">
-                        <span class="text-[#8a735b] font-mono text-xs uppercase tracking-widest mb-1">Email</span>
-                        <span class="text-white font-medium group-hover:text-neutral-300 transition-colors text-lg">sibtellnew14@gmail.com</span>
+                    <a href="mailto:sibtellnew14@gmail.com" class="group w-full md:w-auto flex flex-col items-center gap-2 p-8 border border-neutral-800 hover:border-[#8a735b] hover:-translate-y-1 bg-[#121212] transition-all duration-300 rounded-sm min-w-[280px] focus:focus-outline">
+                        <span class="text-[#8a735b] font-mono text-xs uppercase tracking-widest mb-1 transition-colors group-hover:text-white">Email</span>
+                        <span class="text-white font-medium group-hover:text-[#8a735b] transition-colors text-lg">sibtellnew14@gmail.com</span>
                     </a>
                     
-                    <a href="tel:+27760212909" class="group w-full md:w-auto flex flex-col items-center gap-2 p-8 border border-neutral-800 hover:border-[#8a735b] bg-[#121212] transition-colors rounded-sm min-w-[280px] focus:focus-outline">
-                        <span class="text-[#8a735b] font-mono text-xs uppercase tracking-widest mb-1">Phone</span>
-                        <span class="text-white font-medium group-hover:text-neutral-300 transition-colors text-lg">076 021 2909</span>
+                    <a href="tel:+27760212909" class="group w-full md:w-auto flex flex-col items-center gap-2 p-8 border border-neutral-800 hover:border-[#8a735b] hover:-translate-y-1 bg-[#121212] transition-all duration-300 rounded-sm min-w-[280px] focus:focus-outline">
+                        <span class="text-[#8a735b] font-mono text-xs uppercase tracking-widest mb-1 transition-colors group-hover:text-white">Phone</span>
+                        <span class="text-white font-medium group-hover:text-[#8a735b] transition-colors text-lg">076 021 2909</span>
                     </a>
                 </div>
             </div>
@@ -161,5 +176,27 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach((element) => {
+                observer.observe(element);
+            });
+        });
+    </script>
 </body>
 </html>
